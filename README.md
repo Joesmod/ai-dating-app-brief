@@ -190,4 +190,95 @@ No one else is doing cognitive matching from unstructured conversation at this d
 
 ---
 
+## 6. Tools & Resources Directory
+
+Everything needed to build this — where to find it, what it costs, and how to get started.
+
+### 🧠 AI / LLM Layer
+
+| Tool | What It Does | Link | Pricing |
+|---|---|---|---|
+| **OpenAI API (GPT-4o)** | Conversational AI, scenario generation, trait extraction | [platform.openai.com](https://platform.openai.com) | Pay-per-token (~$2.50/1M input tokens) |
+| **Anthropic Claude API** | Alternative LLM backbone, strong at nuanced conversation | [console.anthropic.com](https://console.anthropic.com) | Pay-per-token (~$3/1M input tokens) |
+| **OpenAI Embeddings API** | Generate user profile vectors (text-embedding-3-large) | [platform.openai.com/docs/guides/embeddings](https://platform.openai.com/docs/guides/embeddings) | $0.13/1M tokens |
+| **LangChain** | Framework for chaining LLM calls, memory, agents | [langchain.com](https://www.langchain.com) | Free / open source |
+| **LlamaIndex** | Data framework for LLM apps, great for structured extraction | [llamaindex.ai](https://www.llamaindex.ai) | Free / open source |
+
+### 🔍 Vector Database (Compatibility Search)
+
+| Tool | What It Does | Link | Pricing |
+|---|---|---|---|
+| **Pinecone** | Managed vector DB, fastest similarity search at scale | [pinecone.io](https://www.pinecone.io) | Free tier → $70/mo+ |
+| **Weaviate** | Open-source vector DB with built-in ML modules | [weaviate.io](https://weaviate.io) | Free (self-hosted) or managed |
+| **Qdrant** | High-performance open-source vector search | [qdrant.tech](https://qdrant.tech) | Free (self-hosted) or cloud |
+| **pgvector** | PostgreSQL extension for vector similarity — keeps everything in one DB | [github.com/pgvector/pgvector](https://github.com/pgvector/pgvector) | Free |
+
+### 🔬 NLP & ML
+
+| Tool | What It Does | Link |
+|---|---|---|
+| **spaCy** | Industrial NLP — entity extraction, text classification | [spacy.io](https://spacy.io) |
+| **BERTopic** | Topic modeling for extracting implicit interests from conversations | [github.com/MaartenGr/BERTopic](https://github.com/MaartenGr/BERTopic) |
+| **Hugging Face Transformers** | Pre-trained models for sentiment, classification, embeddings | [huggingface.co](https://huggingface.co) |
+| **PyTorch** | Deep learning framework for custom compatibility model | [pytorch.org](https://pytorch.org) |
+| **scikit-learn** | Classical ML — clustering, feature engineering, evaluation | [scikit-learn.org](https://scikit-learn.org) |
+
+### 📱 Mobile Development
+
+| Tool | What It Does | Link |
+|---|---|---|
+| **React Native** | JavaScript-based cross-platform mobile (iOS + Android) | [reactnative.dev](https://reactnative.dev) |
+| **Flutter** | Dart-based cross-platform, excellent UI performance | [flutter.dev](https://flutter.dev) |
+| **Expo** | Managed React Native workflow — faster MVP development | [expo.dev](https://expo.dev) |
+
+### ⚙️ Backend & Infrastructure
+
+| Tool | What It Does | Link | Pricing |
+|---|---|---|---|
+| **FastAPI (Python)** | High-performance async API framework | [fastapi.tiangolo.com](https://fastapi.tiangolo.com) | Free |
+| **Socket.io** | Real-time bidirectional communication (chat, live games) | [socket.io](https://socket.io) | Free |
+| **PostgreSQL** | Primary relational database | [postgresql.org](https://www.postgresql.org) | Free |
+| **Redis** | In-memory cache, session store, real-time pub/sub | [redis.io](https://redis.io) | Free |
+| **Supabase** | Managed Postgres + auth + realtime — great for MVPs | [supabase.com](https://supabase.com) | Free tier → $25/mo+ |
+| **Firebase** | Auth, push notifications, analytics | [firebase.google.com](https://firebase.google.com) | Free tier available |
+
+### ☁️ Cloud & Deployment
+
+| Tool | What It Does | Link |
+|---|---|---|
+| **AWS** | Full cloud suite (EC2, Lambda, SageMaker for ML) | [aws.amazon.com](https://aws.amazon.com) |
+| **Google Cloud** | Alternative cloud (Vertex AI for ML workloads) | [cloud.google.com](https://cloud.google.com) |
+| **Vercel** | Deploy frontend/API instantly | [vercel.com](https://vercel.com) |
+| **Railway** | Simple backend deployment with managed Postgres/Redis | [railway.app](https://railway.app) |
+| **Render** | Easy deploy for web services and background workers | [render.com](https://render.com) |
+
+### 🛡️ Auth, Payments & Safety
+
+| Tool | What It Does | Link |
+|---|---|---|
+| **Clerk** | Drop-in auth with social login, phone verification | [clerk.com](https://clerk.com) |
+| **Stripe** | Subscription billing for premium features | [stripe.com](https://stripe.com) |
+| **RevenueCat** | In-app purchase management (iOS/Android) | [revenuecat.com](https://www.revenuecat.com) |
+| **Hive Moderation** | AI content moderation (photos, text) — critical for dating apps | [thehive.ai](https://thehive.ai) |
+| **OpenAI Moderation API** | Free text moderation endpoint | [platform.openai.com/docs/guides/moderation](https://platform.openai.com/docs/guides/moderation) |
+
+### 📊 Analytics & Growth
+
+| Tool | What It Does | Link |
+|---|---|---|
+| **Mixpanel** | Product analytics, funnel tracking, retention metrics | [mixpanel.com](https://mixpanel.com) |
+| **PostHog** | Open-source product analytics + session replay | [posthog.com](https://posthog.com) |
+| **OneSignal** | Push notifications | [onesignal.com](https://onesignal.com) |
+
+### 🎓 Learning Resources
+
+| Resource | Topic | Link |
+|---|---|---|
+| **Building LLM Apps** | End-to-end guide to building with LLMs | [fullstackdeeplearning.com](https://fullstackdeeplearning.com) |
+| **Recommendation Systems Course** | Stanford's rec sys fundamentals (applicable to matching) | [cs246.stanford.edu](https://web.stanford.edu/class/cs246/) |
+| **Designing Data-Intensive Applications** | Bible for scalable backend architecture | [dataintensive.net](https://dataintensive.net) |
+| **Yu-kai Chou's Octalysis** | Gold standard framework for gamification design | [yukaichou.com/gamification-examples/octalysis-complete-gamification-framework](https://yukaichou.com/gamification-examples/octalysis-complete-gamification-framework/) |
+
+---
+
 *NexusAI / MVP Studio — We build AI that thinks.*
