@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Dating Platform — Technical Pitch Deck</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  :root {
+    --bg: #0a0a0f;
+    --card: #12121a;
+    --accent: #7c3aed;
+    --accent2: #ec4899;
+    --accent3: #06b6d4;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --border: #1e1e2e;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  .slide {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 80px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .slide-number {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .logo {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* Slide 1 — Title */
+  .slide-title {
+    text-align: center;
+    background: linear-gradient(135deg, #0a0a0f 0%, #1a1025 50%, #0a0a0f 100%);
+  }
+  .slide-title h1 {
+    font-size: 72px;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .slide-title .tagline {
+    font-size: 28px;
+    color: var(--muted);
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+  .slide-title .subtitle {
+    font-size: 16px;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: 44px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    line-height: 1.2;
+  }
+  h2 .highlight {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--accent3);
+  }
+
+  p, li {
+    font-size: 20px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 20px;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+  }
+
+  .card .icon {
+    font-size: 40px;
+    margin-bottom: 16px;
+  }
+
+  .card h3 {
+    color: var(--text);
+    font-size: 20px;
+  }
+
+  .card p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .stat-row {
+    display: flex;
+    gap: 60px;
+    margin: 40px 0;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat .number {
+    font-size: 56px;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .stat .label {
+    font-size: 16px;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+
+  .flow {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+
+  .flow-step {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .flow-arrow {
+    font-size: 24px;
+    color: var(--accent);
+  }
+
+  .levels {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .level {
+    flex: 1;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 16px;
+    text-align: center;
+    position: relative;
+  }
+
+  .level .num {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--accent);
+  }
+
+  .level .name {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 8px 0;
+  }
+
+  .level .desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .tool-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .tool {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .tool .name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .tool .role {
+    font-size: 12px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+
+  .timeline {
+    display: flex;
+    gap: 0;
+    margin-top: 30px;
+  }
+
+  .timeline-item {
+    flex: 1;
+    padding: 24px;
+    border-left: 3px solid var(--accent);
+    position: relative;
+  }
+
+  .timeline-item::before {
+    content: '';
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    position: absolute;
+    left: -9px;
+    top: 28px;
+  }
+
+  .timeline-item .week {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .timeline-item .task {
+    font-size: 15px;
+    color: var(--text);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .timeline-item .detail {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .moat-list {
+    list-style: none;
+    margin-top: 20px;
+  }
+
+  .moat-list li {
+    font-size: 22px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .moat-list li .bullet {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .cta-box {
+    background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(236,72,153,0.15));
+    border: 1px solid rgba(124,58,237,0.3);
+    border-radius: 20px;
+    padding: 48px;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .cta-box h3 {
+    font-size: 28px;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  .cta-box p {
+    font-size: 18px;
+  }
+
+  @media print {
+    .slide { page-break-after: always; min-height: auto; padding: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: Title -->
+<div class="slide slide-title">
+  <div class="subtitle">Technical Architecture Brief</div>
+  <h1>Done For You<br>Dating</h1>
+  <div class="tagline">AI that finds your match — so you never swipe again</div>
+  <div class="subtitle" style="margin-top: 40px; color: var(--muted); letter-spacing: 1px;">Prepared by NexusAI / MVP Studio</div>
+</div>
+
+<!-- SLIDE 2: The Problem -->
+<div class="slide">
+  <div class="logo">NexusAI</div>
+  <div class="slide-number">01</div>
+  <h2>The swipe is <span class="highlight">broken</span></h2>
+  <div class="stat-row">
+    <div class="stat">
+      <div class="number">79%</div>
+      <div class="label">of users report dating app fatigue</div>
+    </div>
+    <div class="stat">
+      <div class="number">~2%</div>
+      <div class="label">of swipes lead to actual dates</div>
+    </div>
+    <div class="stat">
+      <div class="number">$0</div>
+      <div class="label">investment in understanding <em>who</em> you are</div>
+    </div>
+  </div>
+  <div class="grid-2" style="margin-top: 20px;">
+    <div class="card">
+      <div class="icon">😩</div>
+      <h3>Current Reality</h3>
+      <p>Static profiles. Shallow photos. Infinite swiping. Algorithms optimized for engagement, not connection. Users burned out, matches meaningless.</p>
+    </div>
+    <div class="card">
+      <div class="icon">✨</div>
+      <h3>The Vision</h3>
+      <p>An AI that <strong>knows</strong> you — from real conversation, not checkboxes. It finds your person. You just show up. Done-for-you dating.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3: Cognitive AI Matching -->
+<div class="slide">
+  <div class="logo">NexusAI</div>
+  <div class="slide-number">02</div>
+  <h2>Cognitive AI <span class="highlight">Matching Engine</span></h2>
+  <p style="font-size: 22px; margin-bottom: 30px;">Build deep user understanding from natural conversation — not questionnaires.</p>
+  
+  <div class="flow">
+    <div class="flow-step">💬 User Chat</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">🧠 NLP Pipeline</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">🔍 Trait Extraction</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">📊 User Embedding</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">💘 Match Scoring</div>
+  </div>
+
+  <div class="grid-2" style="margin-top: 30px;">
+    <div>
+      <h3>Multi-Layer Signal Extraction</h3>
+      <div class="card" style="margin-bottom: 12px;">
+        <p><strong>Explicit:</strong> "I want someone who loves dogs" → NER + intent classification</p>
+      </div>
+      <div class="card" style="margin-bottom: 12px;">
+        <p><strong>Implicit:</strong> User consistently values family → topic modeling + sentiment analysis</p>
+      </div>
+      <div class="card" style="margin-bottom: 12px;">
+        <p><strong>Behavioral:</strong> Communication style, humor type, response patterns → linguistic feature extraction</p>
+      </div>
+      <div class="card">
+        <p><strong>Dealbreakers:</strong> Hard no's extracted with high confidence → negation-aware classification</p>
+      </div>
+    </div>
+    <div>
+      <h3>What Makes It Different</h3>
+      <div class="card" style="height: 100%;">
+        <p style="margin-bottom: 16px;">🔄 <strong>Asymmetric Matching</strong> — A→B compatibility ≠ B→A. The model scores each direction independently.</p>
+        <p style="margin-bottom: 16px;">📈 <strong>Living Profiles</strong> — Embeddings update continuously from every interaction, game, and date outcome.</p>
+        <p style="margin-bottom: 16px;">🤖 <strong>Reinforcement Learning</strong> — Match quality improves from real outcomes (conversations, dates, relationships).</p>
+        <p>🧬 <strong>Type vs. Reality</strong> — AI learns what users say they want vs. what actually works for them.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4: The Matchmaker Agent -->
+<div class="slide">
+  <div class="logo">NexusAI</div>
+  <div class="slide-number">03</div>
+  <h2>The AI <span class="highlight">Matchmaker</span></h2>
+  <p style="font-size: 22px; margin-bottom: 30px;">Not a filter. Not an algorithm. An autonomous agent that acts as your personal matchmaker.</p>
+  
+  <div class="grid-3">
+    <div class="card">
+      <div class="icon">🎯</div>
+      <h3>Proactive Matching</h3>
+      <p>Surfaces matches with real explanations: "You both value independence, share dry humor, and are night owls"</p>
+    </div>
+    <div class="card">
+      <div class="icon">💬</div>
+      <h3>Smart Introductions</h3>
+      <p>Generates personalized icebreakers based on shared traits and interests — no more "hey"</p>
+    </div>
+    <div class="card">
+      <div class="icon">📋</div>
+      <h3>Post-Date Debrief</h3>
+      <p>Checks in after dates for feedback, feeds outcomes back into the matching model to improve</p>
+    </div>
+    <div class="card">
+      <div class="icon">🧠</div>
+      <h3>Learns Your Pattern</h3>
+      <p>Discovers the gap between who you think you want and who actually makes you happy</p>
+    </div>
+    <div class="card">
+      <div class="icon">🛡️</div>
+      <h3>Quality Gate</h3>
+      <p>Only surfaces high-confidence matches. No infinite scroll, no paradox of choice</p>
+    </div>
+    <div class="card">
+      <div class="icon">💡</div>
+      <h3>Coaching</h3>
+      <p>Tips on communication, profile optimization, and what's working in your conversations</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5: Gamification -->
+<div class="slide">
+  <div class="logo">NexusAI</div>
+  <div class="slide-number">04</div>
+  <h2>Gamified <span class="highlight">Connection</span></h2>
+  <p style="font-size: 22px; margin-bottom: 30px;">Replace empty swiping with dopamine from real discovery. Every mechanic reveals compatibility.</p>
+  
+  <div class="grid-3">
+    <div class="card">
+      <div class="icon">🎭</div>
+      <h3>Scenario Engine</h3>
+      <p>AI-generated interactive scenarios two matches play together. "What would you do?" dilemmas, collaborative stories, AI-enhanced Two Truths. Reveals values while being genuinely fun.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔥</div>
+      <h3>Daily Spark</h3>
+      <p>One high-quality AI-curated match per day with a unique scenario. Scarcity creates anticipation. Compatibility quests build multi-day streaks.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🤖</div>
+      <h3>AI Wingman</h3>
+      <p>A persistent AI companion with personality. Coaches, debriefs, encourages. Remembers everything. Warm, slightly cheeky, genuinely insightful.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 40px;">Progressive Disclosure — Earn the Connection</h3>
+  <div class="levels">
+    <div class="level">
+      <div class="num">1</div>
+      <div class="name">Spark</div>
+      <div class="desc">AI compatibility summary + blurred photo</div>
+    </div>
+    <div class="level">
+      <div class="num">2</div>
+      <div class="name">Curious</div>
+      <div class="desc">Communication style + first photo unlock</div>
+    </div>
+    <div class="level">
+      <div class="num">3</div>
+      <div class="name">Intrigued</div>
+      <div class="desc">Deep interest overlap + more photos</div>
+    </div>
+    <div class="level">
+      <div class="num">4</div>
+      <div class="name">Connected</div>
+      <div class="desc">Full profile + voice notes</div>
+    </div>
+    <div class="level">
+      <div class="num">5</div>
+      <div class="name">Real</div>
+      <div class="desc">Video chat + contact exchange</div>
+    </div>
+  </div>
+  <p style="margin-top: 16px; font-size: 16px;">Investment creates value — the IKEA effect applied to dating. You earned this connection.</p>
+</div>
+
+<!-- SLIDE 6: Tech Stack -->
+<div class="slide">
+  <div class="logo">NexusAI</div>
+  <div class="slide-number">05</div>
+  <h2>Technical <span class="highlight">Stack</span></h2>
+  
+  <div class="tool-grid">
+    <div class="tool"><div class="name">GPT-4o / Claude</div><div class="role">LLM Backbone</div></div>
+    <div class="tool"><div class="name">OpenAI Embeddings</div><div class="role">Profile Vectors</div></div>
+    <div class="tool"><div class="name">LangChain</div><div class="role">Agent Framework</div></div>
+    <div class="tool"><div class="name">Pinecone</div><div class="role">Vector Search</div></div>
+    <div class="tool"><div class="name">PyTorch</div><div class="role">ML Models</div></div>
+    <div class="tool"><div class="name">BERTopic / spaCy</div><div class="role">NLP Pipeline</div></div>
+    <div class="tool"><div class="name">FastAPI</div><div class="role">Backend API</div></div>
+    <div class="tool"><div class="name">Socket.io</div><div class="role">Real-time Chat</div></div>
+    <div class="tool"><div class="name">React Native</div><div class="role">Mobile App</div></div>
+    <div class="tool"><div class="name">PostgreSQL</div><div class="role">Database</div></div>
+    <div class="tool"><div class="name">Redis</div><div class="role">Cache / Sessions</div></div>
+    <div class="tool"><div class="name">AWS / GCP</div><div class="role">Infrastructure</div></div>
+    <div class="tool"><div class="name">Clerk</div><div class="role">Auth</div></div>
+    <div class="tool"><div class="name">Stripe</div><div class="role">Payments</div></div>
+    <div class="tool"><div class="name">Hive AI</div><div class="role">Content Moderation</div></div>
+    <div class="tool"><div class="name">Mixpanel</div><div class="role">Analytics</div></div>
+  </div>
+</div>
+
+<!-- SLIDE 7: MVP Roadmap -->
+<div class="slide">
+  <div class="logo">NexusAI</div>
+  <div class="slide-number">06</div>
+  <h2>MVP <span class="highlight">Roadmap</span></h2>
+  <p style="font-size: 22px; margin-bottom: 10px;">Buildable in 8–12 weeks. Ship fast, learn fast.</p>
+  
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="week">Weeks 1–2</div>
+      <div class="task">Foundation</div>
+      <div class="detail">Backend API, auth, database schema, basic mobile shell, CI/CD pipeline</div>
+    </div>
+    <div class="timeline-item">
+      <div class="week">Weeks 3–4</div>
+      <div class="task">AI Onboarding</div>
+      <div class="detail">Conversational onboarding agent, trait extraction pipeline, embedding generation</div>
+    </div>
+    <div class="timeline-item">
+      <div class="week">Weeks 5–7</div>
+      <div class="task">Matching Engine</div>
+      <div class="detail">Compatibility scoring, matchmaker agent, daily spark, match explanations</div>
+    </div>
+    <div class="timeline-item">
+      <div class="week">Weeks 8–9</div>
+      <div class="task">Gamification</div>
+      <div class="detail">"What Would You Do?" scenario engine, progressive disclosure, chat system</div>
+    </div>
+    <div class="timeline-item">
+      <div class="week">Weeks 10–12</div>
+      <div class="task">Polish & Launch</div>
+      <div class="detail">Content moderation, safety features, beta testing, app store submission</div>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-top: 40px;">
+    <div class="card">
+      <h3>MVP Scope</h3>
+      <p>✅ AI onboarding conversation<br>
+         ✅ Cognitive matching + dealbreaker filters<br>
+         ✅ One scenario game<br>
+         ✅ 3-level progressive disclosure<br>
+         ✅ Daily matchmaker with explanations</p>
+    </div>
+    <div class="card">
+      <h3>Post-MVP</h3>
+      <p>🔜 RL loop from date outcomes<br>
+         🔜 AI Wingman companion<br>
+         🔜 Additional scenario games<br>
+         🔜 Voice/video unlock tiers<br>
+         🔜 Premium subscription features</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 8: Competitive Moat -->
+<div class="slide">
+  <div class="logo">NexusAI</div>
+  <div class="slide-number">07</div>
+  <h2>Competitive <span class="highlight">Moat</span></h2>
+  
+  <ul class="moat-list">
+    <li><span class="bullet"></span>Every conversation, scenario, and date outcome trains the model — <strong>data flywheel</strong> competitors can't replicate</li>
+    <li><span class="bullet"></span>No one else does cognitive matching from unstructured conversation at this depth</li>
+    <li><span class="bullet"></span>Hinge's "Most Compatible" and Bumble still rely on stated preferences and behavioral heuristics</li>
+    <li><span class="bullet"></span>Progressive disclosure creates investment — users value connections they've earned</li>
+    <li><span class="bullet"></span>Gamification drives engagement without the empty calories of infinite swiping</li>
+    <li><span class="bullet"></span>Responsible design (daily caps, quality > quantity) builds trust and retention</li>
+  </ul>
+
+  <div class="cta-box">
+    <h3>Ready to Build the Future of Dating?</h3>
+    <p>The AI matchmaker that gets smarter with every connection.</p>
+    <p style="margin-top: 20px; color: var(--text); font-weight: 600;">NexusAI / MVP Studio — We build AI that thinks.</p>
+  </div>
+</div>
+
+</body>
+</html>
